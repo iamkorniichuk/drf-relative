@@ -24,3 +24,19 @@ class PostViewset(OverrideDataMixin, viewsets.ModelViewSet)
     def get_overriding_data(self):
         return {"user": self.request.user.pk}
 ```
+
+## Check user permissions to model
+
+Model can be changed only by user that created it.
+For example, only `user` of `Post` model can access it:
+
+```py
+from drf_relative.permissions import IsRelatedToUser
+
+class PostViewset(ModelViewSet):
+    queryset = Post.objects.all()
+
+    def get_permissions(self):
+        permissions = super().get_permissions()
+        return permissions + [IsRelatedToUser("user")]
+```
