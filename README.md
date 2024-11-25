@@ -59,3 +59,23 @@ class PostViewset(ModelViewSet):
 ### Allow read methods
 
 Use `permissions.IsRelatedToUserOrReadOnly` to allow any user access viewset with safe methods.
+
+## Create endpoints for user-related model
+
+You can handle simple endpoints for one-to-one user-related models:
+
+```py
+from django.http import HttpResponse
+from drf_relative.endpoints import UserRelativeEndpointsFacade
+
+def promote(self, request, *args, **kwargs):
+    profile = self.get_object()
+    profile.is_promoted = True
+    profile.save()
+    return HttpResponse("Successful operation.", content_type="text/plain")
+
+facade = UserRelativeEndpointsFacade("profile")
+facade.add_action("promote", promote, detail=True, methods=['post'])
+
+urlpatterns = facade.get_urls(prefix="profile", basename="profile")
+```
