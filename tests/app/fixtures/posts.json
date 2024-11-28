@@ -1,0 +1,42 @@
+[
+  {
+    "model": "app.Post",
+    "pk": 1,
+    "fields": {
+      "title": "Post 1",
+      "description": "by user 1",
+      "created_by": 1,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "app.Post",
+    "pk": 2,
+    "fields": {
+      "title": "Post 2",
+      "description": "by user 1",
+      "created_by": 1,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "app.Post",
+    "pk": 3,
+    "fields": {
+      "title": "Post 3",
+      "description": "by user 2",
+      "created_by": 2,
+      "updated_by": null
+    }
+  },
+  {
+    "model": "app.Post",
+    "pk": 4,
+    "fields": {
+      "title": "Post 4",
+      "description": "by user 2",
+      "created_by": 2,
+      "updated_by": null
+    }
+  }
+]

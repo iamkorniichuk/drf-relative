@@ -1,0 +1,13 @@
+[
+  {
+    "model": "app.Profile",
+    "pk": 1,
+    "fields": {
+      "first_name": "Profile 1",
+      "last_name": "by user 1",
+      "birth_date": "2001-01-01",
+      "is_promoted": false,
+      "user": 1
+    }
+  }
+]
